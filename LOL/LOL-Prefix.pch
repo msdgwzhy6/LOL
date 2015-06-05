@@ -1,0 +1,144 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+//通用宏定义
+
+#define screen                          [UIScreen mainScreen].bounds
+#define screen_H                        [UIScreen mainScreen].bounds.size.height
+#define screen_W                        [UIScreen mainScreen].bounds.size.width
+
+#define   self_W                        self.view.bounds.size.width
+#define   self_H                        self.view.bounds.size.height
+
+
+#define run                             NSLog(@"%s",__FUNCTION__)
+#define wfenge                          NSLog(@"----------------------------------")
+#define whatIs(X)                       NSLog(@"%@", X)
+#define wIsFloat(X)                     NSLog(@"%f", X)
+#define wIsNumber(X)                    NSLog(@"%d", X)
+#define wIsResult(result)               NSLog(@"%@",result?@"YES":@"NO");
+#define wIsFrame(view)                  NSLog(@"%@",NSStringFromCGRect(view.frame));
+
+#define drawercellIdentifier            @"drawercCellReuse"
+#define CM(X,Y,W,H)                     CGRectMake(X, Y, W, H)
+#define Size(W, H)                      (CGSizeMake((W), (H)))
+#define Point(X, Y)                     (CGPointMake((X), (Y)))
+
+//随机颜色
+#define colorRandom                     [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1]
+//蓝色
+#define BlueColor                       [UIColor blueColor]
+#define BlackColor                      [UIColor blackColor]
+#define WhiteColor                      [UIColor whiteColor]
+#define GrayColor                       [UIColor grayColor]
+#define YellowColor                     [UIColor yellowColor]
+#define ClearColor                      [UIColor clearColor]
+#define RedColor                        [UIColor redColor]
+#define GreenColor                      [UIColor greenColor]
+#define BlueColor                       [UIColor blueColor]
+#define MagentaColor                    [UIColor magentaColor]
+#define OrangeColor                     [UIColor orangeColor]
+#define PurpleColor                     [UIColor purpleColor]
+#define BrownColor                      [UIColor brownColor]
+#define ClearColor                      [UIColor clearColor]
+#define CyanColor                       [UIColor cyanColor]
+//天空蓝
+#define SkyBlueColor                    [UIColor colorWithRed:0/255.0f green:178/255.0f blue:238/255.0f alpha:1.0]
+#define PastelBlueColor                 [UIColor colorWithRed:99/255.0f green:161/255.0f blue:247/255.0f alpha:1.0]
+#define WaveBlueColor                   [UIColor colorWithRed:102/255.0f green:169/255.0f blue:251/255.0f alpha:1.0]
+#define CoolPurpleColor                 [UIColor colorWithRed:140/255.0f green:93/255.0f blue:228/255.0f alpha:1.0]
+#define IcebergColor                    [UIColor colorWithRed:200/255.0f green:213/255.0f blue:219/255.0f alpha:1.0]
+#define CharcoalColor                   [UIColor colorWithRed:34/255.0f green:34/255.0f blue:34/255.0f alpha:1.0]
+#define CoolGrayColor                   [UIColor colorWithRed:118/255.0f green:122/255.0f blue:133/255.0f alpha:1.0]
+//麒麟黄
+#define GoldenrodColor                  [UIColor colorWithRed:215/255.0f green:170/255.0f blue:51/255.0f alpha:1.0]
+//海滩沙
+#define SandColor                       [UIColor colorWithRed:222/255.0f green:182/255.0f blue:151/255.0f alpha:1.0]
+//橙色
+#define BurntOrangeColor                [UIColor colorWithRed:184/255.0f green:102/255.0f blue:37/255.0f alpha:1.0]
+//绿色
+#define YellowGreenColor                 [UIColor colorWithRed:192/255.0f green:242/255.0f blue:39/255.0f alpha:1.0]
+
+
+
+//设置字体大小
+#define Font(S)                                 ([UIFont systemFontOfSize:(S)])
+#define FontWithName(N, S)                      ([UIFont fontWithName:(N) size:(S)])
+#define RandomNumber(A, B)                      (arc4random() % ((B) - (A) + 1) + (A))
+#define BoldFont(S)                             ([UIFont boldSystemFontOfSize:S])
+
+
+
+
+
+
+
+
+
+
+
+
+//本app专用宏定义
+
+//新闻的主题有几个
+#define numberOfNewsTitle           4
+
+//重用标示符
+#define FirstTableViewcellIdentifier    @"firstCellreuse"
+#define SecondTableViewcellIdentifier   @"secondCellreuse"
+#define ThirdTableViewcellIdentifier    @"thirdCellreuse"
+#define FourthTableViewcellIdentifier   @"FourthCellreuse"
+#define TableViewOfHeroDetailIdentifier @"heroDetailreuse"
+
+//英雄界面的重用标示符
+#define AllHerosCollectionIdentifier    @"allHerosreuse"
+
+//视频界面的重用标示符
+#define NewestVideoIdentifier           @"newestVideoreuse"
+#define NarraterVideoIDentifier         @"narraterVideoreuse"
+
+//接口
+//新闻接口
+#define newsNewestOfPageOnePort                   @"http://lolbox.oss.aliyuncs.com/json/v3/news/newslist_99_1.json?"
+#define newsHotestOfPageOnePort                   @"http://lolbox.oss.aliyuncs.com/json/v3/news/newslist_88_1.json?"
+#define newsForeignOfPageOnePort                  @"http://lolbox.oss.aliyuncs.com/json/v3/news/newslist_3_1.json?"
+#define newsOfficialOfPageOnePort                 @"http://lolbox.oss.aliyuncs.com/json/v3/news/newslist_1_1.json?"
+
+//所有英雄接口
+#define allHerosPort                  @"http://lolbox.duowan.com/phone/apiHeroes.php?type=all&OSType=iOS7.1.1&v=25"
+#define FreeHerosPort                 @"http://lolbox.duowan.com/phone/apiHeroes.php?type=free&OSType=iOS7.1.1&v=25"
+//视频最新视频接口
+#define VideoNewestPort                           @"http://lolbox.oss.aliyuncs.com/json/videolist_99.json?"
+//召唤师查询第一个html接口
+//视频里解说接口
+#define VideoNarratPort                           @"http://lolbox.oss.aliyuncs.com/json/v4/videotype_2.json?r=602904"
+
+
+
+//英雄详情界面，介绍的字体大小
+#define SizeOfFont                                      12
+#define SizeOfSkillFont                                 12
+
+
+
+//通知中心频道
+#define NotificationOfDrawer        @"drawerOnAndOff"
+//分享
+#define APP_KEY @"iG2ffdkYaq8kIjrSfvjMcUrf"
+
+
+
